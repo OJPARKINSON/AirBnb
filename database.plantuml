@@ -1,0 +1,31 @@
+@startuml Database
+
+    object Users { 
+        Name
+        Email
+        Reviews
+    }
+    object Properties {
+        Name
+        Location
+        User_id
+        Reviews
+    }
+
+    object Stays {
+        start_date
+        end_date
+        nights
+        people
+        price
+        (review
+        Rating
+        Title
+        Description)
+        property_id
+        user_id
+    }
+
+
+
+@enduml

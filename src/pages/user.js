@@ -25,7 +25,7 @@ const User = (props) => {
                     <h2>Please login to see your Account</h2>
                     <a href="http://localhost:3000/login">Login</a>
                 </div>
-            ): (
+            ) : (
                 <div>
                     <h1>Welcome {response[0] ? response[0].name : null}</h1>
                     {

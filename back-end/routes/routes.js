@@ -18,13 +18,13 @@ const routes = (app) => {
     
     app.route('/property')
         .get(getProperty)
-        .post(addNewProperty);
+        .post(securityMiddleware, addNewProperty);
     
     app.route('/properties')
         .get(getProperties);
 
     app.route('/stay')
-        .post(newStay);
+        .post(securityMiddleware, newStay);
 
 }
 

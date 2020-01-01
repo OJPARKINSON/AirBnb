@@ -37,6 +37,10 @@ export const addNewUser = (req, res) => {
 }
 
 export const addNewProperty = (req, res) => {
+    if (!req.session.user_id) {
+        res.redirect(301, "http://localhost:3000/login/");
+    }
+    req.body.user_id = req.session.user_id;
     const newProperty = new Properties(req.body);
     newProperty.save((err, newProp) => {
         if (err) {console.error(err)};
@@ -63,10 +67,14 @@ export const getProperty = (req, res) => {
 }
 
 export const newStay = (req, res) => {
+    if (!req.session.user_id) {
+        res.redirect(301, "http://localhost:3000/login/");
+    }
+    req.body.user_id = req.session.user_id;
     const stay = new Stay(req.body);
     stay.save((err, newProp) => {
         if (err) {console.error(err)};
-        res.redirect(301, "http://localhost:3000/property/" + req.body.property+ "/" + req.body.user_id)
+        res.redirect(301, "http://localhost:3000/property/" + req.body.property)
     });
     res.status(500);
 }

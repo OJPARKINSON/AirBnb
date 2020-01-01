@@ -16,7 +16,7 @@ const App = (props) => {
     <Router>
       <Switch>
         <Route path="/newUser" component={newUser} />
-        <Route path="/property/:property/:user" component={Property} />
+        <Route path="/property/:property" component={Property} />
         <Route path="/user/" component={User} />
         <Route path="/login" component={Login} />
         <Route path="/" component={Home} />

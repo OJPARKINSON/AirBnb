@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Login = () => {
+const newUser = () => {
   return (
     <div>
       <h1>Welcome to AirBnb</h1>
-      <form action="http://localhost:8888/login" method="POST">
+      <form action="http://localhost:8888/newUser" method="POST">
         <input type="text" placeholder="Name" name="name" />
         <input type="email" placeholder="Email" name="email" />
         <input type="submit" />
@@ -13,4 +13,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default newUser;

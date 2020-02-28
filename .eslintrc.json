@@ -1,0 +1,7 @@
+{
+    "extends": ["@sky-uk/eslint-config-sky", "@sky-uk/eslint-config-sky-react"],
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  }

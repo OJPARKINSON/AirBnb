@@ -9,7 +9,7 @@ const Property = props => {
     Axios.get(`/Property?propertyID=${props?.match.params.property}`)
       .then(res => setProperty(res.data[0]))
       .catch(err => console.log(err));
-  }, [props, props.match.params.id, props.match.params.property]);
+  }, [props, props.match.params.property]);
   return (
     <div>
       <h1>This is property {props?.match.params.id}</h1>

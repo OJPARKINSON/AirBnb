@@ -19,7 +19,7 @@ const Home = () => {
       <div>
         <ul>
           <li>
-            <a href="http://localhost:3000/user/">Profile</a>
+            <a href="http://localhost:3000/profile/">Profile</a>
           </li>
           <li>
             <a href="http://localhost:3000/newUser/">Create Account</a> ||{' '}

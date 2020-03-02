@@ -85,6 +85,31 @@ export const newStay = (req, res) => {
 };
 
 export const getUser = async (req, res) => {
+  console.log(req.body);
+  const usersProfile = [
+    await User.findOne({ _id: req.session.user_id }, (err, docs) => {
+      if (err) {
+        console.log(err);
+      }
+      return docs[0];
+    }),
+    await Stay.find({ user_id: req.session.user_id }, (err, docs) => {
+      if (err) {
+        console.log(err);
+      }
+      return docs[0];
+    }),
+    await Properties.find({ user_id: req.session.user_id }, (err, docs) => {
+      if (err) {
+        console.log(err);
+      }
+      return docs[0];
+    }),
+  ];
+  res.status(200).send(usersProfile);
+};
+
+export const getProfile = async (req, res) => {
   const usersProfile = [
     await User.findOne({ _id: req.session.user_id }, (err, docs) => {
       if (err) {

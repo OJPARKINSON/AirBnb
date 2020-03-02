@@ -9,7 +9,7 @@ const Stays = ({ stay, user }) => {
       <p>Nights: {stay.nights}</p>
       <p>Bedrooms: {stay.bedrooms}</p>
       <p>Nightly cost: {`£${stay.price}`}</p>
-      <a href={`http://localhost:3000/property/${stay.property}/${user}`}>View property</a>
+      <a href={`http://localhost:3000/property/${stay.property}`}>View property</a>
       {user === stay.owner ? (
         <a href={`http://localhost:3000/user/${stay.user_id}`}>View vister</a>
       ) : (

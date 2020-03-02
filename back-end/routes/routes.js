@@ -7,17 +7,18 @@ import {
   getUser,
   securityMiddleware,
   userLogin,
-} from "../controllers/controllers";
+  getProfile,
+} from '../controllers/controllers';
 
 const routes = app => {
   app.route('/login').post(userLogin);
 
-  app
-    .route('/user')
-    .get(securityMiddleware, getUser)
-    .post(addNewUser);
+  app.route('/user').post(securityMiddleware, getUser);
 
-  app;
+  app.route('/newUser').post(addNewUser);
+
+  app.route('/profile').get(securityMiddleware, getProfile);
+
   app
     .route('/property')
     .get(getProperty)

@@ -8,7 +8,7 @@ import Stays from './components/stays';
 const User = props => {
   const [response, setResponse] = useState([]);
   useEffect(() => {
-    Axios.post('/user', { user: props.match.params.id })
+    Axios.get('/profile')
       .then(res => {
         console.log(res.data);
         setResponse(res.data);

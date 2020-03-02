@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Properties = ({ property, user }) => {
+  console.log(document);
   return (
     <div className="property">
       <p>House name: {property.houseName}</p>
